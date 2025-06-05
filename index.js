@@ -4,13 +4,19 @@ const express = require('express')
 
 const cors = require('cors')
 
+const cookieParser = require('cookie-parser')
+
 const router = require('./router')
 
 const server=express()
 
-server.use(cors())
+server.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true
+}))
+server.use(express.json({limit:'10mb'}))
 
-server.use(express.json({limit:'5mb'}))
+server.use(cookieParser())
 
 server.use(router)
 

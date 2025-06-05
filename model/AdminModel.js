@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const adminSchema = new mongoose.Schema({
-  username: {
+   username: {
     type: String,
     required: true,
     unique: true
@@ -10,9 +10,20 @@ const adminSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  role:{
-    type:String,
-    default:"admin"
+  role: {
+    type: String,
+    default: "admin"
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  otp: {
+    type: String
+  },
+  otpExpiry: {
+    type: Date
   }
 });
 
