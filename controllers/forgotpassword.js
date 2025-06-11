@@ -2,7 +2,6 @@ const Admin = require('../model/AdminModel');
 const sendEmail = require('../middleware/mailer');
 const bcrypt = require('bcryptjs');
 
-// Step 1: Send OTP to email
 const sendOtpToAdmin = async (req, res) => {
     console.log(req.body);
 
@@ -29,7 +28,6 @@ const sendOtpToAdmin = async (req, res) => {
     }
 };
 
-// Step 2: Verify OTP
 const verifyOtp = async (req, res) => {
     const { email, otp } = req.body;
 
@@ -48,7 +46,6 @@ const verifyOtp = async (req, res) => {
     }
 };
 
-// Step 3: Reset Password
 const resetPassword = async (req, res) => {
     const { email, newPassword } = req.body;
 

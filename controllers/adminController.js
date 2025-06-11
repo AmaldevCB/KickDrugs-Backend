@@ -15,7 +15,7 @@ exports.adminLogin = async (req, res) => {
                 const token = jwt.sign({ admin: admin.username }, process.env.JWT_KEY, { expiresIn: remember ? '7d' : '1h' })
                 res.cookie('adminToken', token, {
                     httpOnly: true,
-                    secure: process.env.NODE_ENV === 'production',  // true on prod, false on dev
+                    secure: process.env.NODE_ENV === 'production', 
                     sameSite: 'none',
                     maxAge: remember ? 7 * 24 * 60 * 60 * 1000 : 60 * 60 * 1000
                 });
