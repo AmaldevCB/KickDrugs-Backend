@@ -11,7 +11,7 @@ const router = require('./router')
 const server=express()
 
 server.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://kick-drugs.vercel.app',
     credentials: true
 }))
 server.use(express.json({limit:'10mb'}))
